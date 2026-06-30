@@ -130,7 +130,7 @@ export default function RegistrationForm({ initialConfirmedCount }: Registration
             <span style={{ fontWeight: 600 }}>{submittedData.companyName}</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>営業名</span>
+            <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>来場担当者名</span>
             <span style={{ fontWeight: 600 }}>{submittedData.salesName} 様</span>
           </div>
         </div>
@@ -214,7 +214,7 @@ export default function RegistrationForm({ initialConfirmedCount }: Registration
 
         <div className={styles.formGroup}>
           <label htmlFor="salesName" className={styles.label}>
-            営業名 <span className={styles.required}>*</span>
+            来場担当者名 <span className={styles.required}>*</span>
           </label>
           <input
             type="text"

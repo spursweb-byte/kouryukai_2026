@@ -182,7 +182,7 @@ export default function AdminPage() {
     }
 
     const headers = [
-      'ID', 'エントリーNo', '会社名', '営業名', 'メールアドレス', 
+      'ID', 'エントリーNo', '会社名', '来場担当者名', 'メールアドレス', 
       '配信受信アドレス', '案件・要員保有状況', 'その他', 
       'ステータス', '来場状況', '登録日時'
     ];
@@ -347,7 +347,7 @@ export default function AdminPage() {
                   <th className={styles.th}>No</th>
                   <th className={styles.th}>エントリーNo</th>
                   <th className={styles.th}>会社名</th>
-                  <th className={styles.th}>営業名</th>
+                  <th className={styles.th}>来場担当者名</th>
                   <th className={styles.th}>メールアドレス</th>
                   <th className={styles.th}>ステータス</th>
                   <th className={styles.th} style={{ textAlign: 'center' }}>当日の来場確認</th>
