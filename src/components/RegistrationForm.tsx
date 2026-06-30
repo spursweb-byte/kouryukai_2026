@@ -26,6 +26,8 @@ export default function RegistrationForm({ initialConfirmedCount }: Registration
     salesName: string;
   } | null>(null);
 
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+
   const capacity = 65;
   const isCurrentlyFull = initialConfirmedCount >= capacity;
 
@@ -34,31 +36,9 @@ export default function RegistrationForm({ initialConfirmedCount }: Registration
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const executeSubmit = async () => {
     setLoading(true);
     setError(null);
-
-    // バリデーション
-    if (!formData.companyName || !formData.salesName || !formData.email || !formData.resourceStatus) {
-      setError('必須項目が入力されていません。');
-      setLoading(false);
-      return;
-    }
-
-    // 配信受信アドレスが未入力の場合の確認ポップアップ
-    if (!formData.deliveryEmail.trim()) {
-      const proceed = window.confirm(
-        '【確認】\n配信受信アドレスが入力されていません。\nこのままだと主催企業からの案件・要員情報の配信が行えず、機会ロスとなってしまう可能性がありますが、このままエントリーを進めますか？'
-      );
-      if (!proceed) {
-        setLoading(false);
-        // 入力欄にフォーカスを当てる
-        document.getElementById('deliveryEmail')?.focus();
-        return;
-      }
-    }
-
     try {
       const response = await fetch('/api/register', {
         method: 'POST',
@@ -81,6 +61,27 @@ export default function RegistrationForm({ initialConfirmedCount }: Registration
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    // バリデーション
+    if (!formData.companyName || !formData.salesName || !formData.email || !formData.resourceStatus) {
+      setError('必須項目が入力されていません。');
+      setLoading(false);
+      return;
+    }
+
+    // 配信受信アドレスが未入力の場合の確認ポップアップ（カスタムモーダル）
+    if (!formData.deliveryEmail.trim()) {
+      setShowConfirmModal(true);
+      return;
+    }
+
+    await executeSubmit();
   };
 
   // 1. 送信完了画面
@@ -326,6 +327,43 @@ export default function RegistrationForm({ initialConfirmedCount }: Registration
           to { transform: rotate(360deg); }
         }
       `}</style>
+
+      {/* カスタム確認モーダル */}
+      {showConfirmModal && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalContent}>
+            <h4 className={styles.modalTitle}>【確認】配信受信アドレスの未入力</h4>
+            <div className={styles.modalBody}>
+              <p>配信受信アドレスが入力されていません。</p>
+              <p style={{ marginTop: '10px' }}>このままだと、主催企業からの今後の案件・要員情報の配信が行えず、<strong>機会ロスとなってしまう可能性</strong>があります。</p>
+              <p style={{ marginTop: '10px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>※よろしければ「入力に戻る」を押して配信アドレスをご入力ください。</p>
+            </div>
+            <div className={styles.modalActions}>
+              <button 
+                type="button" 
+                className={styles.modalBtnCancel} 
+                onClick={() => {
+                  setShowConfirmModal(false);
+                  setLoading(false);
+                  document.getElementById('deliveryEmail')?.focus();
+                }}
+              >
+                入力に戻る
+              </button>
+              <button 
+                type="button" 
+                className={styles.modalBtnConfirm}
+                onClick={async () => {
+                  setShowConfirmModal(false);
+                  await executeSubmit();
+                }}
+              >
+                このままエントリーする
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
