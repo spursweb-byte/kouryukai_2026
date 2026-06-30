@@ -40,10 +40,23 @@ export default function RegistrationForm({ initialConfirmedCount }: Registration
     setError(null);
 
     // バリデーション
-    if (!formData.companyName || !formData.salesName || !formData.email || !formData.deliveryEmail || !formData.resourceStatus) {
+    if (!formData.companyName || !formData.salesName || !formData.email || !formData.resourceStatus) {
       setError('必須項目が入力されていません。');
       setLoading(false);
       return;
+    }
+
+    // 配信受信アドレスが未入力の場合の確認ポップアップ
+    if (!formData.deliveryEmail.trim()) {
+      const proceed = window.confirm(
+        '【確認】\n配信受信アドレスが入力されていません。\nこのままだと主催企業からの案件・要員情報の配信が行えず、機会ロスとなってしまう可能性がありますが、このままエントリーを進めますか？'
+      );
+      if (!proceed) {
+        setLoading(false);
+        // 入力欄にフォーカスを当てる
+        document.getElementById('deliveryEmail')?.focus();
+        return;
+      }
     }
 
     try {
@@ -233,8 +246,9 @@ export default function RegistrationForm({ initialConfirmedCount }: Registration
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="deliveryEmail" className={styles.label}>
-            配信受信アドレス <span className={styles.required}>*</span>
+          <label htmlFor="deliveryEmail" className={styles.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span>配信受信アドレス</span>
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 'normal' }}>(任意：今後の情報配信用)</span>
           </label>
           <input
             type="email"
@@ -242,7 +256,6 @@ export default function RegistrationForm({ initialConfirmedCount }: Registration
             name="deliveryEmail"
             className={styles.input}
             placeholder="例: delivery@example.com"
-            required
             value={formData.deliveryEmail}
             onChange={handleChange}
             disabled={loading}

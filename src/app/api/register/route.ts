@@ -7,8 +7,8 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { companyName, salesName, email, deliveryEmail, resourceStatus, note } = body;
 
-    // 必須入力のバリデーション
-    if (!companyName || !salesName || !email || !deliveryEmail || !resourceStatus) {
+    // 必須入力のバリデーション (deliveryEmailは任意に変更)
+    if (!companyName || !salesName || !email || !resourceStatus) {
       return NextResponse.json(
         { error: '必須項目が入力されていません。' },
         { status: 400 }
@@ -80,7 +80,7 @@ export async function POST(request: Request) {
           companyName: trimmedCompanyName,
           salesName: trimmedSalesName,
           email,
-          deliveryEmail,
+          deliveryEmail: deliveryEmail || '', // 未入力時は空文字で保存
           resourceStatus,
           note: note || null,
           status,
