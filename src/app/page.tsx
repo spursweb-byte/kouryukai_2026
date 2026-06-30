@@ -132,8 +132,11 @@ export default async function Home() {
         <RegistrationForm initialConfirmedCount={confirmedCount} />
       </section>
 
-      <footer style={{ marginTop: '50px', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
+      <footer style={{ marginTop: '50px', paddingBottom: '30px', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
         <p>© 2026 Spurs Inc. All rights reserved.</p>
+        <a href="/admin" style={{ color: 'rgba(255,255,255,0.15)', textDecoration: 'none', fontSize: '0.75rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-muted)'} onMouseOut={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.15)'}>
+          管理者ログイン
+        </a>
       </footer>
     </main>
   );
