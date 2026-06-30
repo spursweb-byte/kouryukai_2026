@@ -98,15 +98,16 @@ export async function POST(request: Request) {
       });
     });
 
-    // バックグラウンドで非同期にメール送信を実行（APIレスポンスの遅延を防ぐため、awaitせずに実行）
-    sendConfirmationEmail({
+    // Vercel(サーバーレス)環境ではレスポンス返却後にプロセスが一時停止するため、
+    // 確実にメール送信を待ってからレスポンスを返すように await を追加します。
+    await sendConfirmationEmail({
       email: registration.email,
       salesName: registration.salesName,
       companyName: registration.companyName,
       entryNo: registration.entryNo,
       status: registration.status as 'CONFIRMED' | 'WAITLIST',
     }).catch((err) => {
-      console.error('Failed to send confirmation email in background:', err);
+      console.error('Failed to send confirmation email:', err);
     });
 
     return NextResponse.json({
