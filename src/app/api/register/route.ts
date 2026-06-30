@@ -123,7 +123,7 @@ export async function POST(request: Request) {
   } catch (error: any) {
     if (error.message === 'DUPLICATE_COMPANY') {
       return NextResponse.json(
-        { error: 'ご入力いただいた会社名はすでにエントリー済みです。\n一社につき1エントリー制となっております。', code: 'DUPLICATE_COMPANY' },
+        { error: 'ご入力いただいた会社名はすでにエントリー済みです。\n2名以上ご来場を希望の場合には「support@spurs-inc.com」まで直接ご相談ください。', code: 'DUPLICATE_COMPANY' },
         { status: 409 }
       );
     }
