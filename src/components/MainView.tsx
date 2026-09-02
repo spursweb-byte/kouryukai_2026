@@ -12,9 +12,6 @@ interface MainViewProps {
 export default function MainView({ initialConfirmedCount }: MainViewProps) {
   const [view, setView] = useState<'lp' | 'form'>('lp');
 
-  const [logo1Error, setLogo1Error] = useState(false);
-  const [logo2Error, setLogo2Error] = useState(false);
-
   const scrollToSection = (id: string) => {
     if (view === 'form') {
       setView('lp');
@@ -123,45 +120,28 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                 </div>
               </div>
 
-              {/* 右側 会社ロゴ2社表示カード */}
-              <div className={styles.logoCard}>
-                <span className={styles.logoLabel}>主催 / 共催</span>
-                <div className={styles.logoGrid}>
-                  <div className={styles.logoItem}>
-                    {!logo1Error ? (
-                      <Image 
-                        src="/logo1.png" 
-                        alt="会社ロゴ 1" 
-                        width={180} 
-                        height={80} 
-                        className={styles.logoImage}
-                        onError={() => setLogo1Error(true)}
-                      />
-                    ) : (
-                      <div style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
-                        🏢 会社ロゴ 1<br />
-                        <span style={{ fontSize: '0.72rem', color: 'var(--spurs-blue)', fontWeight: 600 }}>logo1.png</span>
-                      </div>
-                    )}
-                  </div>
+              {/* 右側 会社ロゴ2つ直接表示（カード枠なし） */}
+              <div className={styles.directLogoContainer}>
+                <div className={styles.directLogoWrapper}>
+                  <Image 
+                    src="/logo1.png" 
+                    alt="会社ロゴ 1" 
+                    width={220} 
+                    height={110} 
+                    className={styles.directLogoImage}
+                    priority
+                  />
+                </div>
 
-                  <div className={styles.logoItem}>
-                    {!logo2Error ? (
-                      <Image 
-                        src="/logo2.png" 
-                        alt="会社ロゴ 2" 
-                        width={180} 
-                        height={80} 
-                        className={styles.logoImage}
-                        onError={() => setLogo2Error(true)}
-                      />
-                    ) : (
-                      <div style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
-                        🏢 会社ロゴ 2<br />
-                        <span style={{ fontSize: '0.72rem', color: 'var(--spurs-blue)', fontWeight: 600 }}>logo2.png</span>
-                      </div>
-                    )}
-                  </div>
+                <div className={styles.directLogoWrapper}>
+                  <Image 
+                    src="/logo2.png" 
+                    alt="会社ロゴ 2" 
+                    width={220} 
+                    height={110} 
+                    className={styles.directLogoImage}
+                    priority
+                  />
                 </div>
               </div>
             </section>
