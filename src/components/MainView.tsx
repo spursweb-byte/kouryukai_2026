@@ -37,6 +37,11 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
 
   return (
     <div className={styles.pageWrapper}>
+      {/* 幾何学的背景装飾 */}
+      <div className={styles.geoGridOverlay} />
+      <div className={styles.geoShape1} />
+      <div className={styles.geoShape2} />
+
       {/* 固定ヘッダーナビゲーション */}
       <header className={styles.navHeader}>
         <div className={styles.navContainer}>

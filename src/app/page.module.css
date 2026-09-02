@@ -3,6 +3,48 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 幾何学的モチーフ背景装飾 */
+.geoShape1 {
+  position: absolute;
+  top: 80px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(30, 112, 184, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+  border: 1px dashed rgba(30, 112, 184, 0.15);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.geoShape2 {
+  position: absolute;
+  top: 600px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  background: radial-gradient(circle, rgba(55, 168, 81, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+  border: 1px solid rgba(55, 168, 81, 0.12);
+  pointer-events: none;
+  z-index: 0;
+  transform: rotate(45deg);
+}
+
+.geoGridOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(45deg, rgba(30, 112, 184, 0.015) 0, rgba(30, 112, 184, 0.015) 1px, transparent 0, transparent 40px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* 固定ヘッダーナビゲーション */
@@ -81,6 +123,8 @@
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ヒーローセクション */
@@ -90,6 +134,7 @@
   gap: 40px;
   padding: 60px 0 80px 0;
   align-items: center;
+  position: relative;
 }
 
 .heroLeft {
@@ -262,6 +307,7 @@
 /* このような方におすすめ (対象者) */
 .sectionBlock {
   padding: 60px 0;
+  position: relative;
 }
 
 .sectionHeading {
@@ -270,6 +316,18 @@
   margin-bottom: 32px;
   letter-spacing: -0.3px;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sectionHeading::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(to bottom, var(--spurs-blue), var(--spurs-green));
+  border-radius: 2px;
 }
 
 .targetGrid {
@@ -286,6 +344,19 @@
   text-align: center;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.targetCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, transparent 50%, rgba(30, 112, 184, 0.05) 50%);
+  pointer-events: none;
 }
 
 .targetCard:hover {
@@ -325,6 +396,18 @@
   padding: 16px 24px;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--spurs-blue);
 }
 
 .timelineTime {
@@ -356,6 +439,7 @@
   height: 240px;
   background: #e2e8f0;
   position: relative;
+  box-shadow: var(--shadow-sm);
 }
 
 .accessInfo h4 {
@@ -417,6 +501,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bottomCtaBanner::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .bottomCtaSubtitle {
@@ -465,6 +563,8 @@
   background: #ffffff;
   padding: 40px 20px 30px 20px;
   margin-top: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .footerContainer {
@@ -524,6 +624,8 @@
   max-width: 720px;
   margin: 0 auto;
   padding: 40px 20px 80px 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .backBtn {
