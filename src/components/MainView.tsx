@@ -88,7 +88,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                   SES営業交流会
                 </h1>
                 <p className={styles.heroSubtitle}>
-                  ～ビジネスを加速させる名刺交換会～
+                  2026年10月15日（木）13:35スタート ※開場13:20
                 </p>
                 <p className={styles.heroLead}>
                   SES業界に携わる営業担当者が集い、情報交換や人脈形成を通じて<br />
@@ -127,9 +127,9 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                     <span className={styles.eventIcon}>📅</span>
                     <div className={styles.eventDetail}>
                       <h5>日時</h5>
-                      <p>2026年7月27日 (月)</p>
-                      <p style={{ fontSize: '1.2rem', fontWeight: 800 }}>13:30〜14:45</p>
-                      <span className={styles.subText}>(13:15 開場・受付開始)</span>
+                      <p>2026年10月15日 (木)</p>
+                      <p style={{ fontSize: '1.2rem', fontWeight: 800 }}>13:35〜14:45</p>
+                      <span className={styles.subText}>(13:20 開場・受付開始)</span>
                     </div>
                   </div>
 
@@ -158,7 +158,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                   エントリーする
                 </button>
                 <p className={styles.deadlineNote}>
-                  エントリー締切：2026年7月24日 (金) 18:00
+                  エントリー締切：2026年10月12日 (月) 18:00
                 </p>
               </div>
             </section>
@@ -193,11 +193,11 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
               <h3 className={styles.sectionHeading}>プログラム</h3>
               <div className={styles.timeline}>
                 <div className={styles.timelineItem}>
-                  <span className={styles.timelineTime}>13:15 ～</span>
-                  <span className={styles.timelineTitle}>受付開始</span>
+                  <span className={styles.timelineTime}>13:20 ～</span>
+                  <span className={styles.timelineTitle}>受付開始 / 開場</span>
                 </div>
                 <div className={styles.timelineItem}>
-                  <span className={styles.timelineTime}>13:30 ～</span>
+                  <span className={styles.timelineTime}>13:35 ～</span>
                   <span className={styles.timelineTitle}>開会挨拶・主催企業PR</span>
                 </div>
                 <div className={styles.timelineItem}>
