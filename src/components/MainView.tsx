@@ -37,10 +37,11 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* 幾何学的背景装飾 */}
-      <div className={styles.geoGridOverlay} />
-      <div className={styles.geoShape1} />
-      <div className={styles.geoShape2} />
+      {/* 幾何学的背景ポリゴン＆ドットクラスタ装飾（モック画像と一致） */}
+      <div className={styles.polyDotCluster} />
+      <div className={styles.polyPolygon1} />
+      <div className={styles.polyPolygon2} />
+      <div className={styles.polyPolygon3} />
 
       {/* 固定ヘッダーナビゲーション */}
       <header className={styles.navHeader}>

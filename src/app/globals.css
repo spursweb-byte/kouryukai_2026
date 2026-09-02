@@ -39,8 +39,8 @@
   
   /* Shadows & Glows */
   --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+  --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.1);
   --glow-spurs: 0 0 25px rgba(30, 112, 184, 0.15);
   --glow-green: 0 0 25px rgba(55, 168, 81, 0.2);
 }
@@ -58,15 +58,13 @@ html {
 
 body {
   background-color: var(--bg-color);
-  /* 幾何学的パターン（ドットグリッド + 方眼グリッド + アクセントグラデーション） */
+  /* モック画像の背景: 青ドットパターン + 幾何学グラデーション */
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(30, 112, 184, 0.08), rgba(255, 255, 255, 0) 70%),
-    radial-gradient(circle at 90% 40%, rgba(55, 168, 81, 0.06), rgba(255, 255, 255, 0) 60%),
-    radial-gradient(rgba(30, 112, 184, 0.12) 1.2px, transparent 1.2px),
-    linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 28px 28px, 56px 56px, 56px 56px;
-  background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    radial-gradient(circle at 85% 15%, rgba(30, 112, 184, 0.08) 0%, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(circle at 15% 65%, rgba(55, 168, 81, 0.06) 0%, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(rgba(30, 112, 184, 0.16) 1.8px, transparent 1.8px);
+  background-size: 100% 100%, 100% 100%, 20px 20px;
+  background-position: 0 0, 0 0, 0 0;
   background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-sans);
