@@ -5,10 +5,23 @@ import { sendConfirmationEmail } from '@/lib/mail';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { companyName, salesName, email, deliveryEmail, resourceStatus, note } = body;
+    const { 
+      companyName, 
+      salesName, 
+      department, 
+      position, 
+      email, 
+      phoneNumber, 
+      deliveryEmail, 
+      employeeCount, 
+      businessContent, 
+      purpose, 
+      resourceStatus, 
+      note 
+    } = body;
 
-    // 必須入力のバリデーション (deliveryEmailは任意に変更)
-    if (!companyName || !salesName || !email || !resourceStatus) {
+    // 必須入力のバリデーション (deliveryEmailは任意)
+    if (!companyName || !salesName || !email) {
       return NextResponse.json(
         { error: '必須項目が入力されていません。' },
         { status: 400 }
@@ -79,9 +92,15 @@ export async function POST(request: Request) {
           entryNo: `TEMP-${Date.now()}-${Math.random()}`,
           companyName: trimmedCompanyName,
           salesName: trimmedSalesName,
+          department: department || null,
+          position: position || null,
           email,
+          phoneNumber: phoneNumber || null,
           deliveryEmail: deliveryEmail || '', // 未入力時は空文字で保存
-          resourceStatus,
+          employeeCount: employeeCount || null,
+          businessContent: businessContent || null,
+          purpose: purpose || null,
+          resourceStatus: resourceStatus || null,
           note: note || null,
           status,
           attended: false,

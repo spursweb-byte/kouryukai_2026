@@ -8,9 +8,15 @@ interface Registration {
   entryNo: string;
   companyName: string;
   salesName: string;
+  department: string | null;
+  position: string | null;
   email: string;
+  phoneNumber: string | null;
   deliveryEmail: string;
-  resourceStatus: string;
+  employeeCount: string | null;
+  businessContent: string | null;
+  purpose: string | null;
+  resourceStatus: string | null;
   note: string | null;
   status: string;
   attended: boolean;
@@ -182,9 +188,9 @@ export default function AdminPage() {
     }
 
     const headers = [
-      'ID', 'エントリーNo', '会社名', '来場担当者名', 'メールアドレス', 
-      '配信受信アドレス', '案件・要員保有状況', 'その他', 
-      'ステータス', '来場状況', '登録日時'
+      'ID', 'エントリーNo', '会社名', '来場担当者名', '部署名', '役職', 
+      'メールアドレス', '電話番号', '配信受信アドレス', '従業員数', 
+      '主な事業内容', '参加目的・期待', 'ステータス', '来場状況', '登録日時'
     ];
 
     const rows = registrations.map(reg => [
@@ -192,10 +198,14 @@ export default function AdminPage() {
       reg.entryNo,
       reg.companyName,
       reg.salesName,
+      reg.department || '',
+      reg.position || '',
       reg.email,
+      reg.phoneNumber || '',
       reg.deliveryEmail,
-      reg.resourceStatus,
-      reg.note || '',
+      reg.employeeCount || '',
+      reg.businessContent || '',
+      reg.purpose || reg.note || '',
       reg.status === 'CONFIRMED' ? '参加確定' : reg.status === 'WAITLIST' ? 'キャンセル待ち' : 'キャンセル',
       reg.attended ? '来場済' : '未着',
       new Date(reg.createdAt).toLocaleString('ja-JP')
@@ -347,12 +357,12 @@ export default function AdminPage() {
                   <th className={styles.th}>No</th>
                   <th className={styles.th}>エントリーNo</th>
                   <th className={styles.th}>会社名</th>
-                  <th className={styles.th}>来場担当者名</th>
-                  <th className={styles.th}>メールアドレス</th>
+                  <th className={styles.th}>来場担当者名 (部署/役職)</th>
+                  <th className={styles.th}>連絡先 (メール/TEL)</th>
+                  <th className={styles.th}>企業情報 (規模/事業)</th>
                   <th className={styles.th}>ステータス</th>
                   <th className={styles.th} style={{ textAlign: 'center' }}>当日の来場確認</th>
-                  <th className={styles.th}>案件/要員</th>
-                  <th className={styles.th}>その他備考</th>
+                  <th className={styles.th}>参加目的・備考</th>
                   <th className={styles.th}>登録日時</th>
                 </tr>
               </thead>
@@ -362,10 +372,22 @@ export default function AdminPage() {
                     <td className={styles.td}>{reg.id}</td>
                     <td className={styles.td} style={{ fontWeight: 700, color: 'var(--spurs-blue)' }}>{reg.entryNo}</td>
                     <td className={styles.td} style={{ fontWeight: 600 }}>{reg.companyName}</td>
-                    <td className={styles.td}>{reg.salesName}</td>
+                    <td className={styles.td}>
+                      <div style={{ fontWeight: 600 }}>{reg.salesName}</div>
+                      {(reg.department || reg.position) && (
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                          {reg.department || ''} {reg.position || ''}
+                        </div>
+                      )}
+                    </td>
                     <td className={styles.td}>
                       <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>宛: {reg.email}</div>
-                      <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>配: {reg.deliveryEmail}</div>
+                      {reg.phoneNumber && <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>TEL: {reg.phoneNumber}</div>}
+                      {reg.deliveryEmail && <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>配: {reg.deliveryEmail}</div>}
+                    </td>
+                    <td className={styles.td}>
+                      {reg.employeeCount && <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>👥 {reg.employeeCount}</div>}
+                      {reg.businessContent && <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>🏢 {reg.businessContent}</div>}
                     </td>
                     <td className={styles.td}>
                       <select
@@ -397,17 +419,8 @@ export default function AdminPage() {
                         {reg.attended ? '来場済' : '未着'}
                       </span>
                     </td>
-                    <td className={styles.td}>
-                      <span className={styles.badge} style={{ 
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid var(--card-border)',
-                        color: 'var(--text-secondary)'
-                      }}>
-                        {reg.resourceStatus}
-                      </span>
-                    </td>
                     <td className={styles.td} style={{ maxWidth: '200px', whiteSpace: 'normal', wordBreak: 'break-all', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
-                      {reg.note || '-'}
+                      {reg.purpose || reg.note || '-'}
                     </td>
                     <td className={styles.td} style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                       {new Date(reg.createdAt).toLocaleString('ja-JP', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })}

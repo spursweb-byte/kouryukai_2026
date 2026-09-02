@@ -1,226 +1,600 @@
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px 80px 20px;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 40px;
-  animation: fadeIn 0.8s ease-out;
-}
-
-.logoWrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.logo {
-  max-width: 180px;
-  height: auto;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
-.title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-/* Event Info Card */
-.infoCard {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--border-radius-md);
-  padding: 30px;
-  margin-bottom: 30px;
-  backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: hidden;
-}
-
-.infoCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, var(--spurs-blue), var(--spurs-green));
-}
-
-.infoGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.infoItem {
+/* 全体レイアウト */
+.pageWrapper {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.infoLabel {
+/* 固定ヘッダーナビゲーション */
+.navHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(11, 17, 32, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 24px;
+}
+
+.navContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLogoLink {
+  display: flex;
+  align-items: center;
+}
+
+.navLogo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navMenu {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  list-style: none;
+}
+
+.navLink {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.navCtaBtn {
+  background: linear-gradient(135deg, var(--spurs-blue) 0%, var(--spurs-green) 100%);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
   font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(30, 112, 184, 0.3);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.navCtaBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--glow-green);
+}
+
+/* LPメインコンテンツ */
+.mainContent {
+  flex: 1;
+  padding-top: 80px; /* ヘッダー分 */
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ヒーローセクション */
+.heroSection {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 40px;
+  padding: 60px 0 80px 0;
+  align-items: center;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(30, 112, 184, 0.15);
+  border: 1px solid rgba(30, 112, 184, 0.4);
+  color: #60a5fa;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.heroTitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #38bdf8;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.heroLead {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+
+.pointsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pointItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.pointIcon {
+  background: rgba(30, 112, 184, 0.15);
+  border: 1px solid rgba(30, 112, 184, 0.3);
+  color: #60a5fa;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.pointText h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.pointText p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* 右側 イベントカード (開催概要情報) */
+.eventCard {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-lg), var(--glow-spurs);
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.eventCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--spurs-blue), var(--spurs-green));
+}
+
+.eventInfoGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.eventInfoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.eventIcon {
+  font-size: 1.2rem;
+  color: #38bdf8;
+  margin-top: 2px;
+}
+
+.eventDetail h5 {
+  font-size: 0.75rem;
   color: var(--text-muted);
   font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
-.infoValue {
-  font-size: 1.1rem;
+.eventDetail p {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.eventDetail .subText {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.heroFormBtn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--spurs-blue) 0%, var(--spurs-green) 100%);
+  color: white;
+  border-radius: var(--border-radius-sm);
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  text-align: center;
+  display: block;
+}
+
+.heroFormBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-green);
+}
+
+.deadlineNote {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* このような方におすすめ (対象者) */
+.sectionBlock {
+  padding: 60px 0;
+}
+
+.sectionHeading {
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+  letter-spacing: -0.3px;
+}
+
+.targetGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.targetCard {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-md);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.targetCard:hover {
+  border-color: rgba(30, 112, 184, 0.4);
+  transform: translateY(-4px);
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.targetIcon {
+  font-size: 2rem;
+  color: #60a5fa;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.targetText {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* プログラムセクション */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.timelineItem {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--card-border);
+  padding: 16px 24px;
+  border-radius: var(--border-radius-sm);
+  position: relative;
+}
+
+.timelineTime {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #38bdf8;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.timelineTitle {
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
 }
 
-/* PR Section */
-.prSection {
-  background: linear-gradient(135deg, rgba(30, 112, 184, 0.1) 0%, rgba(55, 168, 81, 0.05) 100%);
-  border: 1px solid rgba(30, 112, 184, 0.15);
+/* アクセスセクション */
+.accessGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.mapBox {
   border-radius: var(--border-radius-md);
-  padding: 30px;
-  margin-bottom: 30px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  height: 240px;
+  background: #1e293b;
   position: relative;
 }
 
-.prBadge {
-  position: absolute;
-  top: -12px;
-  left: 20px;
-  background: linear-gradient(135deg, var(--spurs-blue), var(--spurs-green));
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.prContent h3 {
+.accessInfo h4 {
   font-size: 1.3rem;
-  margin-bottom: 12px;
-  font-weight: 700;
+  font-weight: 800;
+  margin-bottom: 8px;
 }
 
-.prText {
+.accessAddress {
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  font-size: 0.95rem;
   margin-bottom: 16px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
-.prLink {
-  display: inline-flex;
-  align-items: center;
-  color: var(--spurs-green);
-  font-weight: 600;
-  font-size: 0.95rem;
-  gap: 6px;
-}
-
-.prLink:hover {
-  text-decoration: underline;
-  transform: translateX(3px);
-}
-
-/* Rules Section */
-.rulesSection {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--border-radius-md);
-  padding: 30px;
-  margin-bottom: 40px;
-}
-
-.sectionTitle {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 20px;
+.accessStationList {
   display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.rulesList {
-  list-style: none;
-}
-
-.ruleItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.ruleItem:last-child {
-  border-bottom: none;
-}
-
-.ruleIcon {
-  color: var(--spurs-yellow);
-  font-size: 1.1rem;
-  margin-top: 2px;
-}
-
-.ruleText h4 {
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 4px;
-}
-
-.ruleText p {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-}
-
-/* Form Container */
-.formCard {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--border-radius-md);
-  padding: 40px 30px;
-  box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(12px);
-}
-
-.formCard.focused {
-  border-color: var(--card-border-focus);
-  box-shadow: var(--glow-blue);
-}
-
-.formGroup {
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 24px;
 }
 
-.formGroup:last-of-type {
-  margin-bottom: 32px;
+.accessStationItem {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.label {
-  display: block;
+.googleMapBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease;
+}
+
+.googleMapBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ボトムCTA */
+.bottomCtaBanner {
+  margin: 60px 0 80px 0;
+  background: linear-gradient(135deg, var(--spurs-blue) 0%, var(--spurs-green) 100%);
+  border-radius: var(--border-radius-lg);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: var(--shadow-lg), var(--glow-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottomCtaSubtitle {
   font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 6px;
+}
+
+.bottomCtaTitle {
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.bottomCtaNote {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 24px;
+}
+
+.bottomCtaBtn {
+  background: white;
+  color: #0f172a;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.bottomCtaBtn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* フッター */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: #080d1a;
+  padding: 40px 20px 30px 20px;
+  margin-top: auto;
+}
+
+.footerContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.footerDesc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 450px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.footerNav {
+  display: flex;
+  gap: 20px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.adminLink {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.adminLink:hover {
+  color: var(--text-secondary);
+}
+
+/* ===================================================
+   エントリーフォーム 画面スタイル
+   =================================================== */
+.formPageWrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 80px 20px;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.backBtn:hover {
+  color: var(--text-primary);
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.formHeaderTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.formHeaderSub {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.requiredNote {
+  color: var(--danger);
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.formCard {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(16px);
+  margin-bottom: 24px;
+}
+
+.formSectionTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.formGroup {
+  margin-bottom: 22px;
+}
+
+.formLabel {
+  display: block;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 8px;
 }
 
-.required {
+.requiredTag {
   color: var(--danger);
   margin-left: 4px;
 }
@@ -232,143 +606,106 @@
   border: 1px solid var(--card-border);
   border-radius: var(--border-radius-sm);
   color: var(--text-primary);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   transition: all 0.2s ease;
 }
 
 .input:focus, .select:focus, .textarea:focus {
   border-color: var(--spurs-blue);
   background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 0 3px rgba(30, 112, 184, 0.15);
+  box-shadow: 0 0 0 3px rgba(30, 112, 184, 0.18);
 }
 
 .select option {
-  background-color: var(--bg-color);
+  background-color: #0f172a;
   color: var(--text-primary);
 }
 
 .textarea {
-  resize: vertical;
   min-height: 100px;
+  resize: vertical;
 }
 
-.submitBtn {
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(135deg, var(--spurs-blue) 0%, var(--spurs-green) 100%);
-  color: white;
-  border-radius: var(--border-radius-sm);
-  font-weight: 700;
-  font-size: 1.05rem;
+/* 同意チェックボックス群 */
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
-.submitBtn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: var(--glow-green);
-  opacity: 0.95;
+.checkboxInput {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--spurs-green);
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
-.submitBtn:active:not(:disabled) {
-  transform: translateY(0);
-}
-
-.submitBtn:disabled {
-  background: var(--text-muted);
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.capacityIndicator {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px dashed var(--card-border);
-  border-radius: var(--border-radius-sm);
-  margin-bottom: 24px;
-}
-
-.capacityText {
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.capacityStatus {
-  padding: 2px 10px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-.statusAvailable {
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--success);
-}
-
-.statusWarning {
-  background: rgba(245, 158, 11, 0.15);
-  color: var(--warning);
-}
-
-.statusFull {
+.checkboxBadge {
   background: rgba(239, 68, 68, 0.15);
   color: var(--danger);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  white-space: nowrap;
 }
 
-.errorMessage {
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.2);
-  color: #fca5a5;
-  padding: 12px 16px;
-  border-radius: var(--border-radius-sm);
-  margin-bottom: 20px;
-  font-size: 0.9rem;
+.submitBtnGradient {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--spurs-blue) 0%, var(--spurs-green) 100%);
+  color: white;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-md), var(--glow-green);
+  transition: all 0.25s ease;
+  text-align: center;
+  margin-top: 10px;
 }
 
-@media (max-width: 600px) {
-  .title {
-    font-size: 1.7rem;
-  }
-  .infoCard {
-    padding: 20px;
-  }
-  .infoGrid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  .formCard {
-    padding: 25px 20px;
-  }
+.submitBtnGradient:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(55, 168, 81, 0.4);
 }
 
-.adminLink {
-  color: rgba(255, 255, 255, 0.15);
-  text-decoration: none;
-  font-size: 0.75rem;
-  transition: color 0.2s ease;
+.submitBtnGradient:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
-.adminLink:hover {
+.formFooterNote {
+  text-align: center;
+  font-size: 0.8rem;
   color: var(--text-muted);
+  margin-top: 16px;
+  line-height: 1.5;
 }
 
-/* Custom Confirm Modal */
+/* カスタム確認モーダル */
 .modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -377,26 +714,26 @@
 }
 
 .modalContent {
-  background: rgba(20, 30, 40, 0.95);
+  background: rgba(15, 23, 42, 0.95);
   border: 1px solid var(--card-border);
   border-radius: var(--border-radius-md);
-  padding: 30px;
+  padding: 32px;
   max-width: 480px;
   width: 90%;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-lg);
   animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
 }
 
 .modalTitle {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 16px;
   color: var(--text-primary);
 }
 
 .modalBody {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 28px;
@@ -450,5 +787,37 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 900px) {
+  .heroSection {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 30px 0 50px 0;
+  }
+
+  .targetGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .accessGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .navMenu {
+    display: none; /* スマホ時は主要ボタンのみ */
+  }
+
+  .footerTop {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
   }
 }

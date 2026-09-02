@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
 
 :root {
-  /* Colors */
+  /* Spurs Brand Colors */
   --spurs-blue: #1e70b8;
   --spurs-blue-rgb: 30, 112, 184;
   --spurs-green: #37a851;
@@ -9,37 +9,40 @@
   --spurs-yellow: #f8c301;
   --spurs-yellow-rgb: 248, 195, 1;
   
-  --bg-color: #0b0f19;
-  --bg-gradient: radial-gradient(circle at 50% 0%, #162235 0%, #0b0f19 70%);
-  --card-bg: rgba(22, 30, 49, 0.65);
-  --card-bg-hover: rgba(28, 39, 64, 0.8);
+  /* Dark Gradient Theme Colors */
+  --bg-color: #0b1120;
+  --bg-secondary: #0f172a;
+  --card-bg: rgba(15, 23, 42, 0.7);
+  --card-bg-elevated: rgba(30, 41, 59, 0.6);
   --card-border: rgba(255, 255, 255, 0.08);
-  --card-border-focus: rgba(30, 112, 184, 0.4);
+  --card-border-glow: rgba(30, 112, 184, 0.3);
   
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
   
+  /* Status Colors */
   --success: #10b981;
   --warning: #f59e0b;
   --danger: #ef4444;
   --info: #3b82f6;
 
-  /* Fonts */
+  /* Typography */
   --font-sans: 'Plus Jakarta Sans', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
   /* Layout */
-  --max-width: 1200px;
+  --max-width: 1100px;
   --border-radius-sm: 8px;
   --border-radius-md: 16px;
   --border-radius-lg: 24px;
   
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
-  --glow-blue: 0 0 20px rgba(30, 112, 184, 0.25);
-  --glow-green: 0 0 20px rgba(55, 168, 81, 0.25);
+  /* Shadows & Glows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+  --glow-spurs: 0 0 30px rgba(30, 112, 184, 0.25);
+  --glow-green: 0 0 30px rgba(55, 168, 81, 0.3);
 }
 
 /* Reset & Base Styles */
@@ -49,9 +52,15 @@
   padding: 0;
 }
 
-html, body {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   background-color: var(--bg-color);
-  background-image: var(--bg-gradient);
+  background-image: 
+    radial-gradient(ellipse 80% 80% at 50% -20%, rgba(30, 112, 184, 0.15), rgba(255, 255, 255, 0)),
+    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(55, 168, 81, 0.08), rgba(255, 255, 255, 0));
   background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-sans);
@@ -85,41 +94,31 @@ button, input, select, textarea {
   background: var(--bg-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
 }
 
-/* Animations */
+/* Gradients & Animations */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-spurs {
+  background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 15px rgba(30, 112, 184, 0.15); }
-  50% { box-shadow: 0 0 25px rgba(30, 112, 184, 0.35); }
-}
-
-/* Utility Classes */
 .animate-fade-in {
-  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
-.text-gradient {
-  background: linear-gradient(135deg, #ffffff 30%, var(--spurs-blue) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-gradient-spurs {
-  background: linear-gradient(135deg, var(--spurs-blue) 0%, var(--spurs-green) 50%, var(--spurs-yellow) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 800;
-}
-
