@@ -12,6 +12,9 @@ interface MainViewProps {
 export default function MainView({ initialConfirmedCount }: MainViewProps) {
   const [view, setView] = useState<'lp' | 'form'>('lp');
 
+  const [logo1Error, setLogo1Error] = useState(false);
+  const [logo2Error, setLogo2Error] = useState(false);
+
   const scrollToSection = (id: string) => {
     if (view === 'form') {
       setView('lp');
@@ -120,46 +123,46 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                 </div>
               </div>
 
-              {/* 右側 開催概要イベントカード */}
-              <div id="overview" className={styles.eventCard}>
-                <div className={styles.eventInfoGrid}>
-                  <div className={styles.eventInfoRow}>
-                    <span className={styles.eventIcon}>📅</span>
-                    <div className={styles.eventDetail}>
-                      <h5>日時</h5>
-                      <p>2026年10月15日 (木)</p>
-                      <p style={{ fontSize: '1.2rem', fontWeight: 800 }}>13:35〜14:45</p>
-                      <span className={styles.subText}>(13:20 開場・受付開始)</span>
-                    </div>
+              {/* 右側 会社ロゴ2社表示カード */}
+              <div className={styles.logoCard}>
+                <span className={styles.logoLabel}>主催 / 共催</span>
+                <div className={styles.logoGrid}>
+                  <div className={styles.logoItem}>
+                    {!logo1Error ? (
+                      <Image 
+                        src="/logo1.png" 
+                        alt="会社ロゴ 1" 
+                        width={180} 
+                        height={80} 
+                        className={styles.logoImage}
+                        onError={() => setLogo1Error(true)}
+                      />
+                    ) : (
+                      <div style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
+                        🏢 会社ロゴ 1<br />
+                        <span style={{ fontSize: '0.72rem', color: 'var(--spurs-blue)', fontWeight: 600 }}>logo1.png</span>
+                      </div>
+                    )}
                   </div>
 
-                  <div className={styles.eventInfoRow}>
-                    <span className={styles.eventIcon}>📍</span>
-                    <div className={styles.eventDetail}>
-                      <h5>会場</h5>
-                      <p>幸和ビル 4階</p>
-                      <span className={styles.subText}>〒150-0002 東京都渋谷区渋谷2-22-6</span>
-                    </div>
-                  </div>
-
-                  <div className={styles.eventInfoRow}>
-                    <span className={styles.eventIcon}>🎫</span>
-                    <div className={styles.eventDetail}>
-                      <h5>費用 / 定員</h5>
-                      <p>無料 / 66名限定</p>
-                      <span className={styles.subText} style={{ color: 'var(--spurs-green)', fontWeight: 600 }}>
-                        ({66 - initialConfirmedCount > 0 ? `残り ${66 - initialConfirmedCount} 席` : '66名以降はキャンセル待ち'})
-                      </span>
-                    </div>
+                  <div className={styles.logoItem}>
+                    {!logo2Error ? (
+                      <Image 
+                        src="/logo2.png" 
+                        alt="会社ロゴ 2" 
+                        width={180} 
+                        height={80} 
+                        className={styles.logoImage}
+                        onError={() => setLogo2Error(true)}
+                      />
+                    ) : (
+                      <div style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
+                        🏢 会社ロゴ 2<br />
+                        <span style={{ fontSize: '0.72rem', color: 'var(--spurs-blue)', fontWeight: 600 }}>logo2.png</span>
+                      </div>
+                    )}
                   </div>
                 </div>
-
-                <button onClick={openForm} className={styles.heroFormBtn}>
-                  エントリーする
-                </button>
-                <p className={styles.deadlineNote}>
-                  エントリー締切：2026年10月12日 (月) 18:00
-                </p>
               </div>
             </section>
 
