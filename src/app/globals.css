@@ -9,17 +9,17 @@
   --spurs-yellow: #f8c301;
   --spurs-yellow-rgb: 248, 195, 1;
   
-  /* Dark Gradient Theme Colors */
-  --bg-color: #0b1120;
-  --bg-secondary: #0f172a;
-  --card-bg: rgba(15, 23, 42, 0.7);
-  --card-bg-elevated: rgba(30, 41, 59, 0.6);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --card-border-glow: rgba(30, 112, 184, 0.3);
+  /* Light Theme Colors (白基調) */
+  --bg-color: #f8fafc;
+  --bg-secondary: #ffffff;
+  --card-bg: #ffffff;
+  --card-bg-elevated: #ffffff;
+  --card-border: #e2e8f0;
+  --card-border-glow: rgba(30, 112, 184, 0.25);
   
   /* Text Colors */
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
   --text-muted: #64748b;
   
   /* Status Colors */
@@ -38,11 +38,11 @@
   --border-radius-lg: 24px;
   
   /* Shadows & Glows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
-  --glow-spurs: 0 0 30px rgba(30, 112, 184, 0.25);
-  --glow-green: 0 0 30px rgba(55, 168, 81, 0.3);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+  --glow-spurs: 0 0 25px rgba(30, 112, 184, 0.15);
+  --glow-green: 0 0 25px rgba(55, 168, 81, 0.2);
 }
 
 /* Reset & Base Styles */
@@ -59,8 +59,8 @@ html {
 body {
   background-color: var(--bg-color);
   background-image: 
-    radial-gradient(ellipse 80% 80% at 50% -20%, rgba(30, 112, 184, 0.15), rgba(255, 255, 255, 0)),
-    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(55, 168, 81, 0.08), rgba(255, 255, 255, 0));
+    radial-gradient(ellipse 80% 80% at 50% -20%, rgba(30, 112, 184, 0.07), rgba(255, 255, 255, 0)),
+    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(55, 168, 81, 0.04), rgba(255, 255, 255, 0));
   background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-sans);
@@ -94,22 +94,22 @@ button, input, select, textarea {
   background: var(--bg-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: #94a3b8;
 }
 
 /* Gradients & Animations */
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+  background: linear-gradient(135deg, #0f172a 30%, #334155 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-spurs {
-  background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+  background: linear-gradient(135deg, #1e70b8 0%, #37a851 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
