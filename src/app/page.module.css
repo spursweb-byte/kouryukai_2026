@@ -9,16 +9,7 @@
 
 /* 拡大モック画像と寸分違わぬ幾何学的ポリゴン＆ドット背景装飾 */
 .polyDotCluster {
-  position: absolute;
-  top: 60px;
-  right: 40px;
-  width: 340px;
-  height: 220px;
-  background-image: radial-gradient(rgba(30, 112, 184, 0.3) 2px, transparent 2px);
-  background-size: 16px 16px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.9;
+  display: none;
 }
 
 .polyBadgeLeft {

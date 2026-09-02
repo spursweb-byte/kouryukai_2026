@@ -37,8 +37,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* 拡大モック画像と完全に一致する幾何学的背景ポリゴン＆ドットクラスタ装飾 */}
-      <div className={styles.polyDotCluster} />
+      {/* 幾何学的背景ポリゴン装飾（ドット除去済み） */}
       <div className={styles.polyBadgeLeft} />
       <div className={styles.polyTriangleRight1} />
       <div className={styles.polyTriangleRight2} />
