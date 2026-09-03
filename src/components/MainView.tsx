@@ -209,26 +209,19 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                   </div>
                 </div>
 
-                {/* 右側 会場内注意事項 */}
-                <div className={styles.venueNoticeCard}>
-                  <div className={styles.venueNoticeHeader}>
-                    <span>ℹ️</span> 会場内のお願い・マナー
-                  </div>
-                  <div className={styles.venueNoticeList}>
-                    <div className={styles.venueNoticeItem}>
-                      <span className={styles.venueNoticeIcon}>🚭</span>
-                      <div className={styles.venueNoticeText}>
-                        <h5>館内・会場内完全禁煙</h5>
-                        <p>館内および会場内はすべて禁煙となっております。</p>
-                      </div>
+                {/* 右側 会場内注意事項（枠なし・大きめテキスト） */}
+                <div className={styles.venueNoticeContainer}>
+                  <div className={styles.venueNoticeItem}>
+                    <span className={styles.venueNoticeIcon}>🚭</span>
+                    <div className={styles.venueNoticeText}>
+                      <h5>館内・会場内完全禁煙</h5>
                     </div>
+                  </div>
 
-                    <div className={styles.venueNoticeItem}>
-                      <span className={styles.venueNoticeIcon}>📵</span>
-                      <div className={styles.venueNoticeText}>
-                        <h5>会場内での通話禁止 (電話NG)</h5>
-                        <p>会場内での電話・お通話はご遠慮ください。</p>
-                      </div>
+                  <div className={styles.venueNoticeItem}>
+                    <span className={styles.venueNoticeIcon}>📵</span>
+                    <div className={styles.venueNoticeText}>
+                      <h5>会場内、および3階フロアでの通話禁止</h5>
                     </div>
                   </div>
                 </div>
