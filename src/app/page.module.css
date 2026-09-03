@@ -231,22 +231,23 @@
   color: var(--text-secondary);
 }
 
-/* 右側 会社ロゴ2つ直接表示コンテナ（カード枠なし） */
+/* 右側 会社ロゴ2つ直接表示コンテナ（カード枠なし・上下配置） */
 .directLogoContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 36px;
+  gap: 24px;
   width: 100%;
-  padding: 20px 10px;
+  padding: 10px;
 }
 
 .directLogoWrapper {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 8px;
+  width: 100%;
   transition: transform 0.3s ease;
 }
 
@@ -255,8 +256,8 @@
 }
 
 .directLogoImage {
-  max-width: 100%;
-  max-height: 110px;
+  max-width: 240px;
+  max-height: 120px;
   width: auto;
   height: auto;
   object-fit: contain;
