@@ -97,10 +97,10 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
 
                 <div className={styles.pointsList}>
                   <div className={styles.pointItem}>
-                    <div className={styles.pointIcon}>👥</div>
+                    <div className={styles.pointIcon}>📍</div>
                     <div className={styles.pointText}>
-                      <h4>66名限定</h4>
-                      <p>質の高い交流を実現する少数制</p>
+                      <h4>かながわ県民センター 3階</h4>
+                      <p>横浜駅西口徒歩約5分</p>
                     </div>
                   </div>
                   <div className={styles.pointItem}>
@@ -204,7 +204,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
               <div className={styles.accessGrid}>
                 <div className={styles.mapBox}>
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.747975472379!2d139.70327337626356!3d35.65858047259461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b56417d4a13%3A0xb35515bfecffc977!2z44CSMTUwLTAwMDIgVG9reW8sIFNoaWJ1eWEgQ2l0eSwgU2hpYnV5YSwgMi1jaG9tZS0yMi02IOWNuOWSjOODk-ODqw!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.689622998638!2d139.62002577625477!3d35.47000887265551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c1505c87e83%3A0x608e920d0f28383f!2z44GL44Gq44GM44KP44CR44KT44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 
@@ -215,22 +215,19 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                 </div>
 
                 <div className={styles.accessInfo}>
-                  <h4>幸和ビル 4階</h4>
+                  <h4>かながわ県民センター 3階</h4>
                   <p className={styles.accessAddress}>
-                    〒150-0002<br />
-                    東京都渋谷区渋谷2-22-6
+                    〒221-0835<br />
+                    神奈川県横浜市神奈川区鶴屋町2-24-2
                   </p>
                   <div className={styles.accessStationList}>
                     <div className={styles.accessStationItem}>
-                      <span>🚆</span> JR渋谷駅 徒歩約5分
-                    </div>
-                    <div className={styles.accessStationItem}>
-                      <span>🚇</span> 地下鉄各線 渋谷駅 徒歩約3分
+                      <span>🚆</span> 横浜駅西口 徒歩約5分
                     </div>
                   </div>
 
                   <a 
-                    href="https://maps.google.com/?q=東京都渋谷区渋谷2-22-6+幸和ビル" 
+                    href="https://maps.google.com/?q=かながわ県民センター" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={styles.googleMapBtn}
