@@ -212,19 +212,22 @@
 }
 
 .pointIcon {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  filter: drop-shadow(0 4px 12px rgba(30, 112, 184, 0.25));
-  transition: transform 0.25s ease;
+  filter: grayscale(100%) brightness(0.35);
+  opacity: 0.85;
+  transition: all 0.25s ease;
 }
 
 .pointItem:hover .pointIcon {
   transform: scale(1.12);
+  filter: grayscale(100%) brightness(0.15);
+  opacity: 1;
 }
 
 .pointText h4 {
