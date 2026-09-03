@@ -47,15 +47,11 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
       <header className={styles.navHeader}>
         <div className={styles.navContainer}>
 
-          {view === 'lp' ? (
-            <ul className={styles.navMenu}>
-              <li><button onClick={() => scrollToSection('about')} className={styles.navLink}>イベント概要</button></li>
-              <li><button onClick={() => scrollToSection('overview')} className={styles.navLink}>開催概要</button></li>
-              <li><button onClick={() => scrollToSection('target')} className={styles.navLink}>対象者</button></li>
-              <li><button onClick={() => scrollToSection('program')} className={styles.navLink}>プログラム</button></li>
-              <li><button onClick={() => scrollToSection('access')} className={styles.navLink}>アクセス</button></li>
-            </ul>
-          ) : (
+          <div className={styles.headerLogoText} onClick={backToLp} role="button" tabIndex={0}>
+            交流会エントリーサイト
+          </div>
+
+          {view === 'form' && (
             <button onClick={backToLp} className={styles.navLink} style={{ fontWeight: 600 }}>
               ‹ イベント概要に戻る
             </button>
