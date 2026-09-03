@@ -46,9 +46,6 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
       {/* 固定ヘッダーナビゲーション */}
       <header className={styles.navHeader}>
         <div className={styles.navContainer}>
-          <div className={styles.headerLogoText} onClick={backToLp} role="button" tabIndex={0}>
-            交流会エントリーサイト
-          </div>
 
           {view === 'lp' ? (
             <ul className={styles.navMenu}>
