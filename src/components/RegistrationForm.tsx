@@ -411,7 +411,7 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
                 disabled={loading}
               />
               <span>
-                主催にて集めた個人情報は、管理目的または参加者へ一部情報を開示されることに同意します。
+                集めた個人情報は、管理目的または参加者へ一部情報を開示されることに同意します。
                 <span className={styles.checkboxBadge}>必須</span>
               </span>
             </label>
