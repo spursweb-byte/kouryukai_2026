@@ -152,19 +152,16 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
               <h3 className={styles.sectionHeading}>このような方におすすめ</h3>
               <div className={styles.targetGrid}>
                 <div className={styles.targetCard}>
-                  <span className={styles.targetIcon}>👥</span>
                   <p className={styles.targetText}>
                     新しいビジネスパートナーを<br />探している方
                   </p>
                 </div>
                 <div className={styles.targetCard}>
-                  <span className={styles.targetIcon}>🏢</span>
                   <p className={styles.targetText}>
                     他社の営業事例や取り組みを<br />知りたい方
                   </p>
                 </div>
                 <div className={styles.targetCard}>
-                  <span className={styles.targetIcon}>📈</span>
                   <p className={styles.targetText}>
                     SES業界の最新トレンドを<br />把握したい方
                   </p>
