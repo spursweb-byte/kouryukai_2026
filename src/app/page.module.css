@@ -264,6 +264,15 @@
   filter: drop-shadow(0 4px 14px rgba(15, 23, 42, 0.08));
 }
 
+.directLogoImageLarge {
+  max-width: 340px;
+  max-height: 170px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(15, 23, 42, 0.08));
+}
+
 .eventInfoGrid {
   display: flex;
   flex-direction: column;

@@ -126,9 +126,9 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                   <Image 
                     src="/logo1.png" 
                     alt="会社ロゴ 1" 
-                    width={220} 
-                    height={110} 
-                    className={styles.directLogoImage}
+                    width={340} 
+                    height={170} 
+                    className={styles.directLogoImageLarge}
                     priority
                   />
                 </div>
