@@ -174,22 +174,27 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
               <h3 className={styles.sectionHeading}>プログラム</h3>
               <div className={styles.timeline}>
                 <div className={styles.timelineItem}>
+                  <span className={styles.timelineDot} />
                   <span className={styles.timelineTime}>13:20 ～</span>
                   <span className={styles.timelineTitle}>受付開始 / 開場</span>
                 </div>
                 <div className={styles.timelineItem}>
+                  <span className={styles.timelineDot} />
                   <span className={styles.timelineTime}>13:35 ～</span>
                   <span className={styles.timelineTitle}>開会挨拶・主催企業PR</span>
                 </div>
                 <div className={styles.timelineItem}>
+                  <span className={styles.timelineDot} />
                   <span className={styles.timelineTime}>13:50 ～</span>
                   <span className={styles.timelineTitle}>名刺交換・フリー交流会</span>
                 </div>
                 <div className={styles.timelineItem}>
+                  <span className={styles.timelineDot} />
                   <span className={styles.timelineTime}>14:40 ～</span>
                   <span className={styles.timelineTitle}>閉会挨拶</span>
                 </div>
                 <div className={styles.timelineItem}>
+                  <span className={styles.timelineDot} />
                   <span className={styles.timelineTime}>14:45</span>
                   <span className={styles.timelineTitle}>終了</span>
                 </div>

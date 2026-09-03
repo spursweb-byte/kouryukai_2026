@@ -426,44 +426,67 @@
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
   max-width: 600px;
+  position: relative;
+  padding-left: 28px;
+}
+
+/* タイムライン全体を一本で貫くスマートなグラデーション垂直線 */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--spurs-blue) 0%, var(--spurs-green) 100%);
+  border-radius: 1px;
 }
 
 .timelineItem {
   display: flex;
   align-items: center;
-  gap: 24px;
-  background: #ffffff;
-  border: 1px solid var(--card-border);
-  padding: 16px 24px;
-  border-radius: var(--border-radius-sm);
-  box-shadow: var(--shadow-sm);
+  gap: 28px;
+  padding: 16px 12px;
   position: relative;
-  overflow: hidden;
+  transition: transform 0.25s ease;
 }
 
-.timelineItem::before {
-  content: '';
+.timelineItem:hover {
+  transform: translateX(4px);
+}
+
+/* 軸線上のスマートなドットノード */
+.timelineDot {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 3px;
-  height: 100%;
+  left: -24px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--spurs-blue);
+  box-shadow: 0 0 0 3px rgba(30, 112, 184, 0.12);
+  z-index: 1;
+  transition: all 0.25s ease;
+}
+
+.timelineItem:hover .timelineDot {
   background: var(--spurs-blue);
+  box-shadow: 0 0 0 5px rgba(30, 112, 184, 0.25);
 }
 
 .timelineTime {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   font-weight: 800;
   color: var(--spurs-blue);
-  width: 90px;
+  width: 85px;
   flex-shrink: 0;
 }
 
 .timelineTitle {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.98rem;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
