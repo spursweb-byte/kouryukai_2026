@@ -509,8 +509,8 @@
 .venueNoticeContainer {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  padding: 12px 0;
+  gap: 20px;
+  padding: 6px 0;
 }
 
 .venueNoticeItem {

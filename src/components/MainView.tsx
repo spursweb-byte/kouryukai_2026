@@ -224,6 +224,20 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                       <h5>会場内、および3階フロアでの通話禁止</h5>
                     </div>
                   </div>
+
+                  <div className={styles.venueNoticeItem}>
+                    <span className={styles.venueNoticeIcon}>🍱</span>
+                    <div className={styles.venueNoticeText}>
+                      <h5>食事禁止</h5>
+                    </div>
+                  </div>
+
+                  <div className={styles.venueNoticeItem}>
+                    <span className={styles.venueNoticeIcon}>🤫</span>
+                    <div className={styles.venueNoticeText}>
+                      <h5>建物内を移動する際は大きな声を出さないでください</h5>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
