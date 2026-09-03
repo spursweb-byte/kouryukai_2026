@@ -743,6 +743,14 @@
   justify-content: center;
   height: 38px;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  text-decoration: none;
+}
+
+.tickerLogoItem:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
 }
 
 .tickerLogoImg {

@@ -121,29 +121,41 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                 </div>
               </div>
 
-              {/* 右側 会社ロゴ2つ直接表示（カード枠なし） */}
+              {/* 右側 会社ロゴ2つ直接表示（カード枠なし・HPリンク付き） */}
               <div className={styles.directLogoContainer}>
-                <div className={styles.directLogoWrapper}>
+                <a 
+                  href="https://purga-toria.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.directLogoWrapper}
+                  title="株式会社PURGATORIA 公式サイトを開く"
+                >
                   <Image 
                     src="/logo1.png" 
-                    alt="会社ロゴ 1" 
+                    alt="株式会社PURGATORIA ロゴ" 
                     width={340} 
                     height={170} 
                     className={styles.directLogoImageLarge}
                     priority
                   />
-                </div>
+                </a>
 
-                <div className={styles.directLogoWrapper}>
+                <a 
+                  href="https://spurs-inc.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.directLogoWrapper}
+                  title="Spurs株式会社 公式サイトを開く"
+                >
                   <Image 
                     src="/logo2.png" 
-                    alt="会社ロゴ 2" 
+                    alt="Spurs株式会社 ロゴ" 
                     width={220} 
                     height={110} 
                     className={styles.directLogoImage}
                     priority
                   />
-                </div>
+                </a>
               </div>
             </section>
 
@@ -316,12 +328,24 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
           <div className={styles.logoTickerTrack}>
             {[...Array(8)].map((_, i) => (
               <React.Fragment key={i}>
-                <div className={styles.tickerLogoItem}>
-                  <Image src="/logo1.png" alt="会社ロゴ 1" width={140} height={38} className={styles.tickerLogoImg} />
-                </div>
-                <div className={styles.tickerLogoItem}>
-                  <Image src="/logo2.png" alt="会社ロゴ 2" width={140} height={38} className={styles.tickerLogoImg} />
-                </div>
+                <a 
+                  href="https://purga-toria.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.tickerLogoItem}
+                  title="株式会社PURGATORIA 公式サイトを開く"
+                >
+                  <Image src="/logo1.png" alt="株式会社PURGATORIA ロゴ" width={140} height={38} className={styles.tickerLogoImg} />
+                </a>
+                <a 
+                  href="https://spurs-inc.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.tickerLogoItem}
+                  title="Spurs株式会社 公式サイトを開く"
+                >
+                  <Image src="/logo2.png" alt="Spurs株式会社 ロゴ" width={140} height={38} className={styles.tickerLogoImg} />
+                </a>
               </React.Fragment>
             ))}
           </div>
