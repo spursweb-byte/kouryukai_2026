@@ -293,10 +293,14 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
           </div>
 
           <div className={styles.formGroup} style={{ marginBottom: 0 }}>
-            <label htmlFor="deliveryEmail" className={styles.formLabel} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span>配信受信アドレス</span>
-              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 'normal' }}>(任意：今後の案件・要員配信用)</span>
-            </label>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
+              <label htmlFor="deliveryEmail" className={styles.formLabel} style={{ marginBottom: 0 }}>
+                配信受信アドレス
+              </label>
+              <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 500 }}>
+                主催企業からの配信メールお受取先を入力してください。
+              </span>
+            </div>
             <input
               type="email"
               id="deliveryEmail"
@@ -307,6 +311,11 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
               onChange={handleChange}
               disabled={loading}
             />
+            <div style={{ textAlign: 'right', marginTop: '6px' }}>
+              <span style={{ fontSize: '0.82rem', color: 'var(--spurs-blue)', fontWeight: 700 }}>
+                🎁 こちらをご入力いただいた参加者様には、会終了後参加者リストを無料配布！
+              </span>
+            </div>
           </div>
         </div>
 
