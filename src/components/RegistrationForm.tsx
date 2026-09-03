@@ -347,7 +347,7 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
 
           <div className={styles.formGroup}>
             <label htmlFor="businessContent" className={styles.formLabel}>
-              主な事業内容 <span className={styles.requiredTag}>*</span>
+              保有情報 <span className={styles.requiredTag}>*</span>
             </label>
             <select
               id="businessContent"
@@ -359,11 +359,9 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
               disabled={loading}
             >
               <option value="">選択してください</option>
-              <option value="SES事業メイン">SES事業メイン</option>
-              <option value="受託開発メイン">受託開発メイン</option>
-              <option value="自社プロダクトメイン">自社プロダクトメイン</option>
-              <option value="コンサルティング">コンサルティング</option>
-              <option value="その他">その他</option>
+              <option value="案件保有">案件保有</option>
+              <option value="要員保有">要員保有</option>
+              <option value="両方">両方</option>
             </select>
           </div>
 
