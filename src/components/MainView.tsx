@@ -110,10 +110,10 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                       <p>各社原則1名までとなります。</p>
                     </div>
                   </div>
-                  <div className={styles.pointItem} style={{ alignItems: 'center' }}>
+                  <div className={styles.pointItem}>
                     <div className={styles.pointIcon}>🎫</div>
                     <div className={styles.pointText}>
-                      <h4 style={{ fontSize: '1.18rem', fontWeight: 800, color: 'var(--text-primary)' }}>
+                      <h4 style={{ fontSize: '1.15rem', fontWeight: 800 }}>
                         参加費：無料
                       </h4>
                     </div>

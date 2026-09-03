@@ -196,27 +196,35 @@
 .pointsList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .pointItem {
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 0;
+  transition: transform 0.25s ease;
+}
+
+.pointItem:hover {
+  transform: translateX(4px);
 }
 
 .pointIcon {
-  background: rgba(30, 112, 184, 0.08);
-  border: 1px solid rgba(30, 112, 184, 0.2);
-  color: var(--spurs-blue);
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  font-size: 1.6rem;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
   flex-shrink: 0;
+  filter: drop-shadow(0 4px 12px rgba(30, 112, 184, 0.25));
+  transition: transform 0.25s ease;
+}
+
+.pointItem:hover .pointIcon {
+  transform: scale(1.12);
 }
 
 .pointText h4 {
