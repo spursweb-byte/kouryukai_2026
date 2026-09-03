@@ -172,31 +172,65 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
             {/* プログラム */}
             <section id="program" className={styles.sectionBlock}>
               <h3 className={styles.sectionHeading}>プログラム</h3>
-              <div className={styles.timeline}>
-                <div className={styles.timelineItem}>
-                  <span className={styles.timelineDot} />
-                  <span className={styles.timelineTime}>13:20 ～</span>
-                  <span className={styles.timelineTitle}>受付開始 / 開場</span>
+              <div className={styles.programGrid}>
+                {/* 左側 タイムライン */}
+                <div className={styles.timeline}>
+                  <div className={styles.timelineItem}>
+                    <span className={styles.timelineDot} />
+                    <span className={styles.timelineTime}>13:20 ～</span>
+                    <div>
+                      <span className={styles.timelineTitle}>受付開始 / 開場</span>
+                      <p className={styles.timelineNote}>※受付開始時間前のご来場はご遠慮ください。</p>
+                    </div>
+                  </div>
+
+                  <div className={styles.timelineItem}>
+                    <span className={styles.timelineDot} />
+                    <span className={styles.timelineTime}>13:35 ～</span>
+                    <div>
+                      <span className={styles.timelineTitle}>開会挨拶 / ㈱PURGATORIA , Spurs㈱</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.timelineItem}>
+                    <span className={styles.timelineDot} />
+                    <span className={styles.timelineTime}>13:40 ～</span>
+                    <div>
+                      <span className={styles.timelineTitle}>名刺交換・フリー交流スタート</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.timelineItem}>
+                    <span className={styles.timelineDot} />
+                    <span className={styles.timelineTime}>～ 15:30</span>
+                    <div>
+                      <span className={styles.timelineTitle}>交流終了</span>
+                    </div>
+                  </div>
                 </div>
-                <div className={styles.timelineItem}>
-                  <span className={styles.timelineDot} />
-                  <span className={styles.timelineTime}>13:35 ～</span>
-                  <span className={styles.timelineTitle}>開会挨拶・主催企業PR</span>
-                </div>
-                <div className={styles.timelineItem}>
-                  <span className={styles.timelineDot} />
-                  <span className={styles.timelineTime}>13:50 ～</span>
-                  <span className={styles.timelineTitle}>名刺交換・フリー交流会</span>
-                </div>
-                <div className={styles.timelineItem}>
-                  <span className={styles.timelineDot} />
-                  <span className={styles.timelineTime}>14:40 ～</span>
-                  <span className={styles.timelineTitle}>閉会挨拶</span>
-                </div>
-                <div className={styles.timelineItem}>
-                  <span className={styles.timelineDot} />
-                  <span className={styles.timelineTime}>14:45</span>
-                  <span className={styles.timelineTitle}>終了</span>
+
+                {/* 右側 会場内注意事項 */}
+                <div className={styles.venueNoticeCard}>
+                  <div className={styles.venueNoticeHeader}>
+                    <span>ℹ️</span> 会場内のお願い・マナー
+                  </div>
+                  <div className={styles.venueNoticeList}>
+                    <div className={styles.venueNoticeItem}>
+                      <span className={styles.venueNoticeIcon}>🚭</span>
+                      <div className={styles.venueNoticeText}>
+                        <h5>館内・会場内完全禁煙</h5>
+                        <p>館内および会場内はすべて禁煙となっております。</p>
+                      </div>
+                    </div>
+
+                    <div className={styles.venueNoticeItem}>
+                      <span className={styles.venueNoticeIcon}>📵</span>
+                      <div className={styles.venueNoticeText}>
+                        <h5>会場内での通話禁止 (電話NG)</h5>
+                        <p>会場内での電話・お通話はご遠慮ください。</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>

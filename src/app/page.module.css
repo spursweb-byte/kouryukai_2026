@@ -423,11 +423,18 @@
 }
 
 /* プログラムセクション */
+.programGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
 .timeline {
   display: flex;
   flex-direction: column;
   gap: 0;
-  max-width: 600px;
+  width: 100%;
   position: relative;
   padding-left: 28px;
 }
@@ -446,8 +453,8 @@
 
 .timelineItem {
   display: flex;
-  align-items: center;
-  gap: 28px;
+  align-items: flex-start;
+  gap: 20px;
   padding: 16px 12px;
   position: relative;
   transition: transform 0.25s ease;
@@ -461,6 +468,7 @@
 .timelineDot {
   position: absolute;
   left: -24px;
+  top: 20px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -480,14 +488,74 @@
   font-size: 0.98rem;
   font-weight: 800;
   color: var(--spurs-blue);
-  width: 85px;
+  width: 80px;
   flex-shrink: 0;
 }
 
 .timelineTitle {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
+}
+
+.timelineNote {
+  font-size: 0.78rem;
+  color: var(--danger);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* 右側 会場内注意事項カード */
+.venueNoticeCard {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.venueNoticeHeader {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.venueNoticeList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.venueNoticeItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.venueNoticeIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.venueNoticeText h5 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.venueNoticeText p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 /* アクセスセクション */
@@ -969,6 +1037,11 @@
 
   .targetGrid {
     grid-template-columns: 1fr;
+  }
+
+  .programGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .accessGrid {
