@@ -560,6 +560,7 @@
 .signEmoji {
   font-size: 0.95rem;
   line-height: 1;
+  filter: grayscale(100%) brightness(0);
 }
 
 .venueNoticeText h5 {
