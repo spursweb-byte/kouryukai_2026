@@ -110,11 +110,12 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                       <p>各社原則1名までとなります。</p>
                     </div>
                   </div>
-                  <div className={styles.pointItem}>
-                    <div className={styles.pointIcon}>📈</div>
+                  <div className={styles.pointItem} style={{ alignItems: 'center' }}>
+                    <div className={styles.pointIcon}>🎫</div>
                     <div className={styles.pointText}>
-                      <h4>業界トレンドの共有</h4>
-                      <p>最新の業界動向や成功事例を共有</p>
+                      <h4 style={{ fontSize: '1.18rem', fontWeight: 800, color: 'var(--text-primary)' }}>
+                        参加費：無料
+                      </h4>
                     </div>
                   </div>
                 </div>
