@@ -313,7 +313,7 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
             />
             <div style={{ textAlign: 'right', marginTop: '6px' }}>
               <span style={{ fontSize: '0.82rem', color: 'var(--spurs-blue)', fontWeight: 700 }}>
-                🎁 こちらをご入力いただいた参加者様には、会終了後参加者リストを無料配布！
+                こちらをご入力いただいた参加者様には、会終了後参加者リストを無料配布！
               </span>
             </div>
           </div>
