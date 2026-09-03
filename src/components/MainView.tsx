@@ -104,10 +104,10 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                     </div>
                   </div>
                   <div className={styles.pointItem}>
-                    <div className={styles.pointIcon}>🤝</div>
+                    <div className={styles.pointIcon}>👥</div>
                     <div className={styles.pointText}>
-                      <h4>ビジネス機会の創出</h4>
-                      <p>新たなパートナーシップやビジネスチャンスを見つける</p>
+                      <h4>募集人数：65名 ※先着順</h4>
+                      <p>各社原則1名までとなります。</p>
                     </div>
                   </div>
                   <div className={styles.pointItem}>
