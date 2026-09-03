@@ -209,31 +209,39 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                   </div>
                 </div>
 
-                {/* 右側 会場内注意事項（枠なし・大きめテキスト） */}
+                {/* 右側 会場内注意事項（枠なし・統一禁止標識アイコン） */}
                 <div className={styles.venueNoticeContainer}>
                   <div className={styles.venueNoticeItem}>
-                    <span className={styles.venueNoticeIcon}>🚭</span>
+                    <div className={styles.signIcon}>
+                      <span className={styles.signEmoji}>🚬</span>
+                    </div>
                     <div className={styles.venueNoticeText}>
                       <h5>館内・会場内完全禁煙</h5>
                     </div>
                   </div>
 
                   <div className={styles.venueNoticeItem}>
-                    <span className={styles.venueNoticeIcon}>📵</span>
+                    <div className={styles.signIcon}>
+                      <span className={styles.signEmoji}>📱</span>
+                    </div>
                     <div className={styles.venueNoticeText}>
                       <h5>会場内、および3階フロアでの通話禁止</h5>
                     </div>
                   </div>
 
                   <div className={styles.venueNoticeItem}>
-                    <span className={styles.venueNoticeIcon}>🍱</span>
+                    <div className={styles.signIcon}>
+                      <span className={styles.signEmoji}>🍱</span>
+                    </div>
                     <div className={styles.venueNoticeText}>
                       <h5>食事禁止</h5>
                     </div>
                   </div>
 
                   <div className={styles.venueNoticeItem}>
-                    <span className={styles.venueNoticeIcon}>🤫</span>
+                    <div className={styles.signIcon}>
+                      <span className={styles.signEmoji}>🗣️</span>
+                    </div>
                     <div className={styles.venueNoticeText}>
                       <h5>建物内を移動する際は大きな声を出さないでください</h5>
                     </div>
