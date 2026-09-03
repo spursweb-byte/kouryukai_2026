@@ -309,32 +309,31 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
         )}
       </main>
 
-      {/* フッター */}
+      {/* 1/3スリムサイズの無限ロゴスクロールフッター */}
       <footer className={styles.footer}>
-        <div className={styles.footerContainer}>
-          <div className={styles.footerTop}>
-            <div>
-              <Image 
-                src="/logo.png" 
-                alt="Spurs Logo" 
-                width={120} 
-                height={36} 
-                style={{ height: 'auto' }}
-              />
-              <p className={styles.footerDesc}>
-                Spurs株式会社は、システム開発やSES事業、スタートアップの新規事業立ち上げ支援などを行うITプロフェッショナル集団です。
-              </p>
-            </div>
-
-            <div className={styles.footerNav}>
-              <a href="https://spurs-inc.com/" target="_blank" rel="noopener noreferrer">
-                プライバシーポリシー ↗
-              </a>
-            </div>
+        {/* 無限ロゴスクロール */}
+        <div className={styles.logoTickerWrapper}>
+          <div className={styles.logoTickerTrack}>
+            {[...Array(8)].map((_, i) => (
+              <React.Fragment key={i}>
+                <div className={styles.tickerLogoItem}>
+                  <Image src="/logo1.png" alt="会社ロゴ 1" width={140} height={38} className={styles.tickerLogoImg} />
+                </div>
+                <div className={styles.tickerLogoItem}>
+                  <Image src="/logo2.png" alt="会社ロゴ 2" width={140} height={38} className={styles.tickerLogoImg} />
+                </div>
+              </React.Fragment>
+            ))}
           </div>
+        </div>
 
-          <div className={styles.footerBottom}>
-            <p>© Spurs Inc. All Rights Reserved.</p>
+        {/* コンパクトなフッターボトムバー */}
+        <div className={styles.footerBottomContainer}>
+          <p>© Spurs Inc. All Rights Reserved.</p>
+          <div className={styles.footerLinks}>
+            <a href="https://spurs-inc.com/" target="_blank" rel="noopener noreferrer">
+              プライバシーポリシー ↗
+            </a>
             <a href="/admin" className={styles.adminLink}>
               管理者ログイン
             </a>

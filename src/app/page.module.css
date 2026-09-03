@@ -703,49 +703,69 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* フッター */
+/* フッター (1/3スリムサイズの無限ロゴロール) */
 .footer {
   border-top: 1px solid var(--card-border);
   background: #ffffff;
-  padding: 40px 20px 30px 20px;
+  padding: 16px 0 12px 0;
   margin-top: auto;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
-.footerContainer {
+/* 無限ロゴスクロールコンテナ */
+.logoTickerWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0 16px 0;
+  border-bottom: 1px solid #f1f5f9;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.logoTickerTrack {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: max-content;
+  animation: logoScroll 20s linear infinite;
+}
+
+.logoTickerTrack:hover {
+  animation-play-state: paused;
+}
+
+.tickerLogoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.tickerLogoImg {
+  height: 34px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(15, 23, 42, 0.06));
+}
+
+@keyframes logoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footerBottomContainer {
   max-width: var(--max-width);
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.footerTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-}
-
-.footerDesc {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  max-width: 450px;
-  line-height: 1.6;
-  margin-top: 10px;
-}
-
-.footerNav {
-  display: flex;
-  gap: 20px;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-}
-
-.footerBottom {
-  border-top: 1px solid #f1f5f9;
-  padding-top: 20px;
+  padding: 12px 20px 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -753,14 +773,29 @@
   color: var(--text-muted);
 }
 
-.adminLink {
-  color: #cbd5e1;
-  font-size: 0.75rem;
+.footerLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.78rem;
+}
+
+.footerLinks a {
+  color: var(--text-secondary);
   transition: color 0.2s ease;
 }
 
+.footerLinks a:hover {
+  color: var(--spurs-blue);
+}
+
+.adminLink {
+  color: #cbd5e1 !important;
+  font-size: 0.75rem;
+}
+
 .adminLink:hover {
-  color: var(--text-secondary);
+  color: var(--text-secondary) !important;
 }
 
 /* ===================================================
