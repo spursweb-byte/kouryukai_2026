@@ -12,8 +12,6 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
   const [formData, setFormData] = useState({
     companyName: '',
     salesName: '',
-    department: '',
-    position: '',
     email: '',
     phoneNumber: '',
     deliveryEmail: '',
@@ -255,38 +253,6 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
               placeholder="例) Spurs株式会社"
               required
               value={formData.companyName}
-              onChange={handleChange}
-              disabled={loading}
-            />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="department" className={styles.formLabel}>
-              部署名
-            </label>
-            <input
-              type="text"
-              id="department"
-              name="department"
-              className={styles.input}
-              placeholder="例) 営業部"
-              value={formData.department}
-              onChange={handleChange}
-              disabled={loading}
-            />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="position" className={styles.formLabel}>
-              役職
-            </label>
-            <input
-              type="text"
-              id="position"
-              name="position"
-              className={styles.input}
-              placeholder="例) 課長"
-              value={formData.position}
               onChange={handleChange}
               disabled={loading}
             />
