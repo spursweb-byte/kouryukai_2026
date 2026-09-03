@@ -46,16 +46,9 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
       {/* 固定ヘッダーナビゲーション */}
       <header className={styles.navHeader}>
         <div className={styles.navContainer}>
-          <a href="https://spurs-inc.com/" target="_blank" rel="noopener noreferrer" className={styles.navLogoLink}>
-            <Image 
-              src="/logo.png" 
-              alt="Spurs Logo" 
-              width={140} 
-              height={42} 
-              className={styles.navLogo}
-              priority
-            />
-          </a>
+          <div className={styles.headerLogoText} onClick={backToLp} role="button" tabIndex={0}>
+            交流会エントリーサイト
+          </div>
 
           {view === 'lp' ? (
             <ul className={styles.navMenu}>
