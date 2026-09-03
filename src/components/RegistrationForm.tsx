@@ -396,7 +396,7 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
                 disabled={loading}
               />
               <span>
-                本交流会の主旨に同意し、営業・名刺交換を目的とした参加であることを確認しました。
+                こくちーず掲載内容を確認し、内容に同意します。
                 <span className={styles.checkboxBadge}>必須</span>
               </span>
             </label>
@@ -411,7 +411,7 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
                 disabled={loading}
               />
               <span>
-                当日は名刺を60枚以上ご持参します。
+                主催にて集めた個人情報は、管理目的または参加者へ一部情報を開示されることに同意します。
                 <span className={styles.checkboxBadge}>必須</span>
               </span>
             </label>
@@ -426,7 +426,8 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
                 disabled={loading}
               />
               <span>
-                キャンセルする場合は、必ず事前に連絡します。
+                キャンセルの場合は事前に連絡をし、<br />
+                無断キャンセルの場合は今後の交流会に参加を断られる可能性について同意します。
                 <span className={styles.checkboxBadge}>必須</span>
               </span>
             </label>
@@ -441,7 +442,7 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
                 disabled={loading}
               />
               <span>
-                プライバシーポリシーに同意します。
+                当日は受付で2枚名刺を頂戴します。また、60枚ほど名刺のご用意をお願いします。
                 <span className={styles.checkboxBadge}>必須</span>
               </span>
             </label>
