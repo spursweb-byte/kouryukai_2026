@@ -99,7 +99,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                   <div className={styles.pointItem}>
                     <div className={styles.pointIcon}>📍</div>
                     <div className={styles.pointText}>
-                      <h4>かながわ県民センター 3階</h4>
+                      <h4>かながわ県民センター 3階 301会議室</h4>
                       <p>横浜駅西口徒歩約5分</p>
                     </div>
                   </div>
@@ -267,7 +267,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                 </div>
 
                 <div className={styles.accessInfo}>
-                  <h4>かながわ県民センター 3階</h4>
+                  <h4>かながわ県民センター 3階 301会議室</h4>
                   <p className={styles.accessAddress}>
                     〒221-0835<br />
                     神奈川県横浜市神奈川区鶴屋町2-24-2
