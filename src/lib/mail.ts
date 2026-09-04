@@ -44,7 +44,7 @@ export async function sendMail(options: MailOptions): Promise<boolean> {
     });
 
     await transporter.sendMail({
-      from: `"Spurs株式会社 交流会運営事務局" <${from}>`,
+      from: `"株式会社PURGATORIA / Spurs株式会社 交流会運営事務局" <${from}>`,
       to: options.to,
       subject: options.subject,
       text: options.text,
@@ -82,17 +82,17 @@ export async function sendConfirmationEmail(data: {
     ? `お申し込みが完了し、参加確定（定員内）となりました。\n当日はエントリーNo.「${data.entryNo}」を受付にてご提示ください。`
     : `現在、定員（65名）に達しているため「キャンセル待ち」として受付いたしました。\nキャンセルが発生し、繰り上げ参加が可能となりましたら、改めてメールにてご連絡いたします。`;
 
-  const text = `${data.companyName}\n${data.salesName} 様\n\nこの度は、Spurs株式会社主催の「SES交流会（名刺交換会）」にお申し込みいただき誠にありがとうございます。\n\n${statusText}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n■ 開催概要\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n【日時】2026年10月15日（木）\n　　　　13:20 開場 / 受付開始\n　　　　13:35 開始\n　　　　15:30 終了\n\n【会場】\n　〒221-0835\n　神奈川県横浜市神奈川区鶴屋町2-24-2 かながわ県民センター3階 301会議室\n\n【持ち物】\n　・名刺 60枚程度（受付にて2枚ご提出いただきます）\n\n【参加費】\n　無料\n\n【エントリーNo】\n　${data.entryNo}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n■ 主催企業情報\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSpurs株式会社\n公式サイト: https://spurs-inc.com/\nお問い合わせ先: support@spurs-inc.com\n\n※当日のキャンセルや遅刻などのご連絡は、本メールへの返信または上記アドレスまでお願いいたします。\n皆様のご来場を心よりお待ちしております.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+  const text = `${data.companyName}\n${data.salesName} 様\n\nこの度は、株式会社PURGATORIA / Spurs株式会社主催の「SES交流会（名刺交換会）」にお申し込みいただき誠にありがとうございます。\n\n${statusText}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n■ 開催概要\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n【日時】2026年10月15日（木）\n　　　　13:20 開場 / 受付開始\n　　　　13:35 開始\n　　　　15:30 終了\n\n【会場】\n　〒221-0835\n　神奈川県横浜市神奈川区鶴屋町2-24-2 かながわ県民センター3階 301会議室\n\n【持ち物】\n　・名刺 60枚程度（受付にて2枚ご提出いただきます）\n\n【参加費】\n　無料\n\n【エントリーNo】\n　${data.entryNo}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n■ 主催企業情報\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n主催：株式会社PURGATORIA , Spurs株式会社\n公式サイト：https://purga-toria.com/ , https://spurs-inc.com/\nお問い合わせ：${from}\n\n※当日のキャンセルや遅刻などのご連絡は、本メールへの返信または上記アドレスまでお願いいたします。\n皆様のご来場を心よりお待ちしております.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 
   const html = `
     <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
       <div style="background: linear-gradient(135deg, #1b3a4b 0%, #2e6f40 100%); padding: 30px; text-align: center; color: white;">
         <h1 style="margin: 0; font-size: 22px; font-weight: bold; letter-spacing: 1px;">SES交流会（名刺交換会）</h1>
-        <p style="margin: 10px 0 0 0; opacity: 0.9; font-size: 14px;">Spurs株式会社 主催</p>
+        <p style="margin: 10px 0 0 0; opacity: 0.9; font-size: 14px;">株式会社PURGATORIA / Spurs株式会社 主催</p>
       </div>
       <div style="padding: 30px; background-color: #ffffff;">
         <p style="font-size: 16px; font-weight: bold; margin-bottom: 20px;">${data.companyName}<br>${data.salesName} 様</p>
-        <p>この度は、Spurs株式会社主催の「SES交流会（名刺交換会）」にお申し込みいただき、誠にありがとうございます。</p>
+        <p>この度は、株式会社PURGATORIA / Spurs株式会社主催の「SES交流会（名刺交換会）」にお申し込みいただき、誠にありがとうございます。</p>
         
         <div style="margin: 25px 0; padding: 20px; background-color: ${isConfirmed ? '#eef9f0' : '#fff9eb'}; border-left: 4px solid ${isConfirmed ? '#2e6f40' : '#f5a623'}; border-radius: 4px;">
           <p style="margin: 0; font-weight: bold; color: ${isConfirmed ? '#2e6f40' : '#d28000'}; font-size: 16px;">
@@ -130,9 +130,9 @@ export async function sendConfirmationEmail(data: {
         </table>
 
         <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 13px; color: #777;">
-          <p style="margin: 0 0 5px 0; font-weight: bold; color: #333;">主催：Spurs株式会社</p>
-          <p style="margin: 0 0 5px 0;">公式サイト: <a href="https://spurs-inc.com/" target="_blank" style="color: #1b3a4b; text-decoration: none;">https://spurs-inc.com/</a></p>
-          <p style="margin: 0;">お問い合わせ: <a href="mailto:${from}" style="color: #1b3a4b; text-decoration: none;">${from}</a></p>
+          <p style="margin: 0 0 5px 0; font-weight: bold; color: #333;">主催：株式会社PURGATORIA , Spurs株式会社</p>
+          <p style="margin: 0 0 5px 0;">公式サイト：<a href="https://purga-toria.com/" target="_blank" style="color: #1b3a4b; text-decoration: none;">https://purga-toria.com/</a> , <a href="https://spurs-inc.com/" target="_blank" style="color: #1b3a4b; text-decoration: none;">https://spurs-inc.com/</a></p>
+          <p style="margin: 0;">お問い合わせ：<a href="mailto:${from}" style="color: #1b3a4b; text-decoration: none;">${from}</a></p>
         </div>
       </div>
       <div style="background-color: #f8f9fa; padding: 15px; text-align: center; font-size: 11px; color: #999; border-top: 1px solid #eee;">
