@@ -74,7 +74,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                   SES営業交流会
                 </h1>
                 <p className={styles.heroSubtitle}>
-                  2026年10月15日（木）13:35スタート ※開場13:20
+                  2026年12月14日（月）13:00スタート ※開場12:45
                 </p>
                 <p className={styles.heroLead}>
                   SES業界に携わる営業担当者が集い、情報交換や人脈形成を通じて<br />
@@ -85,14 +85,14 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                   <div className={styles.pointItem}>
                     <div className={styles.pointIcon}>📍</div>
                     <div className={styles.pointText}>
-                      <h4>かながわ県民センター 3階 301会議室</h4>
-                      <p>横浜駅西口徒歩約5分</p>
+                      <h4>幸和ビル 3階</h4>
+                      <p>渋谷駅徒歩約3分</p>
                     </div>
                   </div>
                   <div className={styles.pointItem}>
                     <div className={styles.pointIcon}>👥</div>
                     <div className={styles.pointText}>
-                      <h4>募集人数：65名 ※先着順</h4>
+                      <h4>募集人数：80名 ※先着順</h4>
                       <p>各社原則1名までとなります。</p>
                     </div>
                   </div>
@@ -175,7 +175,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                 <div className={styles.timeline}>
                   <div className={styles.timelineItem}>
                     <span className={styles.timelineDot} />
-                    <span className={styles.timelineTime}>13:20 ～</span>
+                    <span className={styles.timelineTime}>12:45 ～</span>
                     <div>
                       <span className={styles.timelineTitle}>受付開始 / 開場</span>
                       <p className={styles.timelineNote}>※受付開始時間前のご来場はご遠慮ください。</p>
@@ -184,7 +184,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
 
                   <div className={styles.timelineItem}>
                     <span className={styles.timelineDot} />
-                    <span className={styles.timelineTime}>13:35 ～</span>
+                    <span className={styles.timelineTime}>13:00 ～</span>
                     <div>
                       <span className={styles.timelineTitle}>開会挨拶 / ㈱PURGATORIA , Spurs㈱</span>
                     </div>
@@ -192,7 +192,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
 
                   <div className={styles.timelineItem}>
                     <span className={styles.timelineDot} />
-                    <span className={styles.timelineTime}>13:40 ～</span>
+                    <span className={styles.timelineTime}>13:05 ～</span>
                     <div>
                       <span className={styles.timelineTitle}>名刺交換・フリー交流スタート</span>
                     </div>
@@ -200,7 +200,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
 
                   <div className={styles.timelineItem}>
                     <span className={styles.timelineDot} />
-                    <span className={styles.timelineTime}>～ 15:30</span>
+                    <span className={styles.timelineTime}>～ 15:00</span>
                     <div>
                       <span className={styles.timelineTitle}>交流終了</span>
                     </div>
@@ -254,7 +254,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
               <div className={styles.accessGrid}>
                 <div className={styles.mapBox}>
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.689622998638!2d139.62002577625477!3d35.47000887265551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185c1505c87e83%3A0x608e920d0f28383f!2z44GL44Gq44GM44KP44CR44KT44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" 
+                    src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E6%B8%8B%E8%B0%B72-22-6%20%E5%B9%B8%E5%92%8C%E3%83%93%E3%83%AB&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 
@@ -265,19 +265,19 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                 </div>
 
                 <div className={styles.accessInfo}>
-                  <h4>かながわ県民センター 3階 301会議室</h4>
+                  <h4>幸和ビル 3階</h4>
                   <p className={styles.accessAddress}>
-                    〒221-0835<br />
-                    神奈川県横浜市神奈川区鶴屋町2-24-2
+                    〒150-0002<br />
+                    東京都渋谷区渋谷2-22-6 幸和ビル3階
                   </p>
                   <div className={styles.accessStationList}>
                     <div className={styles.accessStationItem}>
-                      <span>🚆</span> 横浜駅西口 徒歩約5分
+                      <span>🚆</span> 渋谷駅（ヒカリエ改札方面） 徒歩約3分
                     </div>
                   </div>
 
                   <a 
-                    href="https://maps.google.com/?q=かながわ県民センター" 
+                    href="https://maps.google.com/?q=東京都渋谷区渋谷2-22-6+幸和ビル" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={styles.googleMapBtn}
@@ -292,7 +292,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
             <section className={styles.bottomCtaBanner}>
               <p className={styles.bottomCtaSubtitle}>SES営業交流会に参加する</p>
               <h2 className={styles.bottomCtaTitle}>今すぐエントリーする</h2>
-              <p className={styles.bottomCtaNote}>66名限定・先着順でのご案内となります</p>
+              <p className={styles.bottomCtaNote}>80名限定・先着順でのご案内となります</p>
               <button onClick={openForm} className={styles.bottomCtaBtn}>
                 エントリーフォームを開く ➔
               </button>

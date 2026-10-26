@@ -39,7 +39,7 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
 
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
-  const capacity = 65;
+  const capacity = 80;
   const isCurrentlyFull = initialConfirmedCount >= capacity;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -162,7 +162,7 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
             <h4>💡 当日の受付について</h4>
             <p style={{ marginTop: '6px' }}>
               会場受付にて、こちらの画面の「エントリーNo.」をご提示いただくか、<br />
-              自動送信メールをご提示ください。名刺は60枚程度お持ちください。
+              自動送信メールをご提示ください。名刺は70枚程度お持ちください。
             </p>
           </div>
 
@@ -213,7 +213,7 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
           marginBottom: '28px',
           lineHeight: 1.5
         }}>
-          ⚠️ 現在、定員の65名に達しているため、今からのご応募は<strong>「キャンセル待ち」</strong>としての受付となります。
+          ⚠️ 現在、定員の80名に達しているため、今からのご応募は<strong>「キャンセル待ち」</strong>としての受付となります。
         </div>
       )}
 
@@ -442,7 +442,7 @@ export default function RegistrationForm({ initialConfirmedCount, onBackToLp }: 
                 disabled={loading}
               />
               <span>
-                当日は受付で2枚名刺を頂戴します。また、60枚ほど名刺のご用意をお願いします。
+                当日は受付で2枚名刺を頂戴します。また、70枚ほど名刺のご用意をお願いします。
                 <span className={styles.checkboxBadge}>必須</span>
               </span>
             </label>

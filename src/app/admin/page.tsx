@@ -323,7 +323,7 @@ export default function AdminPage() {
         </div>
         <div className={`${styles.statCard} ${styles.purple}`}>
           <span className={styles.statLabel}>参加予定人数（確定枠）</span>
-          <span className={styles.statValue}>{stats.confirmedCount} / 65 名</span>
+          <span className={styles.statValue}>{stats.confirmedCount} / 80 名</span>
         </div>
         <div className={`${styles.statCard} ${styles.yellow}`}>
           <span className={styles.statLabel}>キャンセル待ち数</span>

@@ -83,8 +83,8 @@ export async function POST(request: Request) {
         where: { status: 'CONFIRMED' },
       });
 
-      // 65名未満なら参加確定、65名以上ならキャンセル待ち
-      const status = confirmedCount < 65 ? 'CONFIRMED' : 'WAITLIST';
+      // 80名未満なら参加確定、80名以上ならキャンセル待ち
+      const status = confirmedCount < 80 ? 'CONFIRMED' : 'WAITLIST';
 
       // 3. 一旦ダミーのエントリーNoで登録を作成してIDを確保（同時アクセス時の重複回避）
       const tempReg = await tx.registration.create({
