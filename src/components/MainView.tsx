@@ -69,10 +69,13 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
             {/* ヒーローセクション */}
             <section id="about" className={styles.heroSection}>
               <div className={styles.heroLeft}>
-                <span className={styles.badge}>SES企業限定</span>
+                <span className={styles.badge}>第6回</span>
                 <h1 className={`${styles.heroTitle} text-gradient`}>
-                  【第6回】無料SES営業交流会
+                  完全無料 SES交流会
                 </h1>
+                <p className={styles.heroOrganizer}>
+                  共同主催：㈱Purgatoria / Spurs㈱
+                </p>
                 <p className={styles.heroSubtitle}>
                   2026年12月14日（月）13:00スタート ※開場12:45
                 </p>
@@ -290,7 +293,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
 
             {/* ボトムCTA */}
             <section className={styles.bottomCtaBanner}>
-              <p className={styles.bottomCtaSubtitle}>【第6回】無料SES営業交流会に参加する</p>
+              <p className={styles.bottomCtaSubtitle}>完全無料 SES交流会に参加する</p>
               <h2 className={styles.bottomCtaTitle}>今すぐエントリーする</h2>
               <p className={styles.bottomCtaNote}>80名限定・先着順でのご案内となります</p>
               <button onClick={openForm} className={styles.bottomCtaBtn}>
