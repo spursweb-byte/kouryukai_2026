@@ -200,7 +200,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
 
                   <div className={styles.timelineItem}>
                     <span className={styles.timelineDot} />
-                    <span className={styles.timelineTime}>～ 15:00</span>
+                    <span className={styles.timelineTime}>～ 14:45</span>
                     <div>
                       <span className={styles.timelineTitle}>交流終了</span>
                     </div>

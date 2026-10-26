@@ -82,7 +82,7 @@ export async function sendConfirmationEmail(data: {
     ? `お申し込みが完了し、参加確定（定員内）となりました。\n当日はエントリーNo.「${data.entryNo}」を受付にてご提示ください。`
     : `現在、定員（80名）に達しているため「キャンセル待ち」として受付いたしました。\nキャンセルが発生し、繰り上げ参加が可能となりましたら、改めてメールにてご連絡いたします。`;
 
-  const text = `${data.companyName}\n${data.salesName} 様\n\nこの度は、株式会社PURGATORIA / Spurs株式会社主催の「SES交流会（名刺交換会）」にお申し込みいただき誠にありがとうございます。\n\n${statusText}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n■ 開催概要\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n【日時】2026年12月14日（月）\n　　　　12:45 開場 / 受付開始\n　　　　13:00 開始\n　　　　15:00 終了\n\n【会場】\n　〒150-0002\n　東京都渋谷区渋谷2-22-6 幸和ビル3階\n\n【持ち物】\n　・名刺 70枚程度（受付にて2枚ご提出いただきます）\n\n【参加費】\n　無料\n\n【エントリーNo】\n　${data.entryNo}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n■ 主催企業情報\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n主催：株式会社PURGATORIA , Spurs株式会社\n公式サイト：https://purga-toria.com/ , https://spurs-inc.com/\nお問い合わせ：${from}\n\n※当日のキャンセルや遅刻などのご連絡は、本メールへの返信または上記アドレスまでお願いいたします。\n皆様のご来場を心よりお待ちしております.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+  const text = `${data.companyName}\n${data.salesName} 様\n\nこの度は、株式会社PURGATORIA / Spurs株式会社主催の「SES交流会（名刺交換会）」にお申し込みいただき誠にありがとうございます。\n\n${statusText}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n■ 開催概要\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n【日時】2026年12月14日（月）\n　　　　12:45 開場 / 受付開始\n　　　　13:00 開始\n　　　　14:45 終了\n\n【会場】\n　〒150-0002\n　東京都渋谷区渋谷2-22-6 幸和ビル3階\n\n【持ち物】\n　・名刺 70枚程度（受付にて2枚ご提出いただきます）\n\n【参加費】\n　無料\n\n【エントリーNo】\n　${data.entryNo}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n■ 主催企業情報\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n主催：株式会社PURGATORIA , Spurs株式会社\n公式サイト：https://purga-toria.com/ , https://spurs-inc.com/\nお問い合わせ：${from}\n\n※当日のキャンセルや遅刻などのご連絡は、本メールへの返信または上記アドレスまでお願いいたします。\n皆様のご来場を心よりお待ちしております.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 
   const html = `
     <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
@@ -110,7 +110,7 @@ export async function sendConfirmationEmail(data: {
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
             <td style="padding: 10px 0; font-weight: bold; color: #666;">日時</td>
-            <td style="padding: 10px 0;">2026年12月14日（月） 13:00〜15:00 <span style="font-size: 12px; color: #888;">(12:45開場)</span></td>
+            <td style="padding: 10px 0;">2026年12月14日（月） 13:00〜14:45 <span style="font-size: 12px; color: #888;">(12:45開場)</span></td>
           </tr>
           <tr style="border-bottom: 1px solid #eee;">
             <td style="padding: 10px 0; font-weight: bold; color: #666;">会場</td>
