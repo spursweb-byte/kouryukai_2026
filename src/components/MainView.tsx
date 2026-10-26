@@ -71,7 +71,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
               <div className={styles.heroLeft}>
                 <span className={styles.badge}>SES企業限定</span>
                 <h1 className={`${styles.heroTitle} text-gradient`}>
-                  SES営業交流会
+                  【第6回】無料SES営業交流会
                 </h1>
                 <p className={styles.heroSubtitle}>
                   2026年12月14日（月）13:00スタート ※開場12:45
@@ -93,7 +93,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
                     <div className={styles.pointIcon}>👥</div>
                     <div className={styles.pointText}>
                       <h4>募集人数：80名 ※先着順</h4>
-                      <p>各社原則1名までとなります。</p>
+                      <p style={{ color: 'var(--danger)', fontWeight: 600 }}>各社原則1名までとなります。</p>
                     </div>
                   </div>
                   <div className={styles.pointItem}>
@@ -290,7 +290,7 @@ export default function MainView({ initialConfirmedCount }: MainViewProps) {
 
             {/* ボトムCTA */}
             <section className={styles.bottomCtaBanner}>
-              <p className={styles.bottomCtaSubtitle}>SES営業交流会に参加する</p>
+              <p className={styles.bottomCtaSubtitle}>【第6回】無料SES営業交流会に参加する</p>
               <h2 className={styles.bottomCtaTitle}>今すぐエントリーする</h2>
               <p className={styles.bottomCtaNote}>80名限定・先着順でのご案内となります</p>
               <button onClick={openForm} className={styles.bottomCtaBtn}>
